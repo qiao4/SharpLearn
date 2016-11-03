@@ -19,6 +19,7 @@ namespace SharpLearn
 		private System.Windows.Forms.Button buttonSend;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox inputIp;
+		private System.Windows.Forms.BindingSource bindingSource1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -41,12 +42,15 @@ namespace SharpLearn
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.inputMessage = new System.Windows.Forms.TextBox();
 			this.buttonSend = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.inputIp = new System.Windows.Forms.TextBox();
+			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
@@ -104,8 +108,10 @@ namespace SharpLearn
 			this.Controls.Add(this.panel1);
 			this.Name = "FormSendMessage";
 			this.Text = "FormSendMessage";
+			this.Load += new System.EventHandler(this.FormSendMessageLoad);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
 			this.ResumeLayout(false);
 
 		}

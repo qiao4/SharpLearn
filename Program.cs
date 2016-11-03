@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 
 namespace SharpLearn
 {
@@ -33,14 +34,14 @@ namespace SharpLearn
 			Application.Run(new MainForm(p));
 		}
 		
-		
+		//send message by udp in lan
 		public bool SendMessage(String ip, String message) {
 			Socket s = null;
 			try {
 				IPAddress ipa = IPAddress.Parse(ip);
 				IPEndPoint ipp = new IPEndPoint(ipa, port);
 				s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
-				                      ProtocolType.Udp);
+				               ProtocolType.Udp);
 				byte[] bs = UTF8Encoding.Default.GetBytes(message);
 				
 				byte[] data = new byte[bs.Length + 1];
@@ -56,6 +57,50 @@ namespace SharpLearn
 				}
 			}
 			return true;
+		}
+		
+		//listen port 8091 by udp
+		public void StartListen() {
+			Socket s = null;
+			try {
+				IPAddress ipa = IPAddress.Parse("192.168.1.102");
+				IPEndPoint ipp = new IPEndPoint(IPAddress.Any, port);
+				s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
+				               ProtocolType.Udp);
+				s.Bind(ipp);
+				s.Listen(0);
+				while(true) {
+//					Socket temp = s.Accept();
+//					ParameterizedThreadStart start = new ParameterizedThreadStart(p.ReceiveMessage);
+//					Thread newThread = new Thread(StartListen);
+//					newThread.Start(temp);
+					EndPoint point = new IPEndPoint(IPAddress.Any, 0);//用来保存发送方的ip和端口号
+					byte[] data = new byte[1024];
+					s.ReceiveFrom(data, ref point);//接收数据报
+					int length = data[0];
+					byte[] message = new byte[length];
+					Buffer.BlockCopy(data, 1, message, 0,message.Length);
+					MessageBox.Show(UTF8Encoding.Default.GetString(message));
+				}
+			} catch (Exception e) {
+				string error = e.StackTrace;
+			} finally {
+				if(s != null) {
+					s.Close();
+				}
+			}
+		}
+		
+		//receive message
+		public void ReceiveMessage(object ss) {
+			Socket s = (Socket)ss;
+			byte[] data = new byte[1024];
+			s.Receive(data, data.Length, 0);
+			int length = data[0];
+			byte[] message = new byte[length];
+			Buffer.BlockCopy(data, 1, message, 0,message.Length);
+			MessageBox.Show(UTF8Encoding.Default.GetString(message));
+			s.Close();
 		}
 		
 	}
