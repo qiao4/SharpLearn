@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+
+# Debug files and Output files
+obj/
+bin/
