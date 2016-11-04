@@ -22,6 +22,27 @@ namespace SharpLearn
 	{
 		Program p;
 		
+		public delegate void SetTextBoxValue(string value);
+		private void SetMyTextBoxValue(string value)
+        {
+            if (textboxMessage.InvokeRequired)
+            {
+                SetTextBoxValue objSetTextBoxValue = new SetTextBoxValue(SetMyTextBoxValue);
+                IAsyncResult result = this.textboxMessage.BeginInvoke(objSetTextBoxValue, new object[] { value });
+                try
+                {
+                    objSetTextBoxValue.EndInvoke(result);
+                }
+                catch
+                {
+                }
+            }
+            else
+            {
+                this.textboxMessage.Text += value + Environment.NewLine;
+            }
+        }
+		
 		public FormSendMessage(Program p)
 		{
 			InitializeComponent();
@@ -34,31 +55,35 @@ namespace SharpLearn
 		}
 		void FormSendMessageLoad(object sender, EventArgs e)
 		{
-			System.Threading.Thread newThread = new System.Threading.Thread(p.StartListen);
+			System.Threading.Thread newThread = new System.Threading.Thread(StartListen);
 			newThread.Start();
-			
-//			Socket s = null;
-//			IPEndPoint ipp = new IPEndPoint(IPAddress.Any, 8091);
-//			s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
-//			               ProtocolType.Udp);
-//			s.Bind(ipp);
-////			try {
-////				s.Listen(0);
-////			} catch (Exception ee) {
-////				string error = ee.StackTrace;
-////			} finally {
-////				if(s != null) {
-////					s.Close();
-////				}
-////			}
-//			
-//			 EndPoint point = new IPEndPoint(IPAddress.Any, 0);//用来保存发送方的ip和端口号
-//                byte[] data = new byte[1024];
-//                s.ReceiveFrom(data, ref point);//接收数据报
-//                int length = data[0];
-//			byte[] message = new byte[length];
-//			Buffer.BlockCopy(data, 1, message, 0,message.Length);
-//			MessageBox.Show(UTF8Encoding.Default.GetString(message));
+		}
+		
+		public void StartListen() {
+			Socket s = null;
+			try {
+				IPAddress ipa = IPAddress.Parse("192.168.1.102");
+				IPEndPoint ipp = new IPEndPoint(IPAddress.Any, 8091);
+				s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
+				               ProtocolType.Udp);
+				s.Bind(ipp);
+				while(true) {
+					EndPoint point = new IPEndPoint(IPAddress.Any, 0);//用来保存发送方的ip和端口号
+					byte[] data = new byte[1024];
+					s.ReceiveFrom(data, ref point);//接收数据报
+					int length = data[0];
+					byte[] message = new byte[length];
+					Buffer.BlockCopy(data, 1, message, 0,message.Length);
+					SetMyTextBoxValue(UTF8Encoding.Default.GetString(message));
+					
+				}
+			} catch (Exception e) {
+				string error = e.StackTrace;
+			} finally {
+				if(s != null) {
+					s.Close();
+				}
+			}
 		}
 	}
 }

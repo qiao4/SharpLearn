@@ -60,7 +60,8 @@ namespace SharpLearn
 		}
 		
 		//listen port 8091 by udp
-		public void StartListen() {
+		public void StartListen(object textbox) {
+			TextBox tb = textbox as TextBox;
 			Socket s = null;
 			try {
 				IPAddress ipa = IPAddress.Parse("192.168.1.102");
@@ -68,12 +69,7 @@ namespace SharpLearn
 				s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram,
 				               ProtocolType.Udp);
 				s.Bind(ipp);
-				s.Listen(0);
 				while(true) {
-//					Socket temp = s.Accept();
-//					ParameterizedThreadStart start = new ParameterizedThreadStart(p.ReceiveMessage);
-//					Thread newThread = new Thread(StartListen);
-//					newThread.Start(temp);
 					EndPoint point = new IPEndPoint(IPAddress.Any, 0);//用来保存发送方的ip和端口号
 					byte[] data = new byte[1024];
 					s.ReceiveFrom(data, ref point);//接收数据报
@@ -81,6 +77,7 @@ namespace SharpLearn
 					byte[] message = new byte[length];
 					Buffer.BlockCopy(data, 1, message, 0,message.Length);
 					MessageBox.Show(UTF8Encoding.Default.GetString(message));
+					tb.AppendText(UTF8Encoding.Default.GetString(message));
 				}
 			} catch (Exception e) {
 				string error = e.StackTrace;

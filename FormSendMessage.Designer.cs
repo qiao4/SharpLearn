@@ -20,6 +20,7 @@ namespace SharpLearn
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox inputIp;
 		private System.Windows.Forms.BindingSource bindingSource1;
+		private System.Windows.Forms.TextBox textboxMessage;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -49,12 +50,14 @@ namespace SharpLearn
 			this.label1 = new System.Windows.Forms.Label();
 			this.inputIp = new System.Windows.Forms.TextBox();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.textboxMessage = new System.Windows.Forms.TextBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.textboxMessage);
 			this.panel1.Controls.Add(this.inputMessage);
 			this.panel1.Controls.Add(this.buttonSend);
 			this.panel1.Controls.Add(this.label1);
@@ -98,6 +101,14 @@ namespace SharpLearn
 			this.inputIp.Size = new System.Drawing.Size(154, 21);
 			this.inputIp.TabIndex = 0;
 			this.inputIp.Text = "192.168.1.100";
+			// 
+			// textboxMessage
+			// 
+			this.textboxMessage.Location = new System.Drawing.Point(30, 94);
+			this.textboxMessage.Multiline = true;
+			this.textboxMessage.Name = "textboxMessage";
+			this.textboxMessage.Size = new System.Drawing.Size(347, 180);
+			this.textboxMessage.TabIndex = 4;
 			// 
 			// FormSendMessage
 			// 
