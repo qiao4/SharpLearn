@@ -100,5 +100,9 @@ namespace SharpLearn
 			s.Close();
 		}
 		
+		public String Remove(String str) {
+			return str.Replace(" ", "");
+		}
+		
 	}
 }

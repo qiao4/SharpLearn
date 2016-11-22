@@ -50,9 +50,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormRemoveStringSpace.cs" />
+    <Compile Include="FormRemoveStringSpace.Designer.cs">
+      <DependentUpon>FormRemoveStringSpace.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSendMessage.cs" />
     <Compile Include="FormSendMessage.Designer.cs">
       <DependentUpon>FormSendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThreadTest.cs" />
+    <Compile Include="FormThreadTest.Designer.cs">
+      <DependentUpon>FormThreadTest.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
@@ -65,8 +73,14 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormRemoveStringSpace.resx">
+      <DependentUpon>FormRemoveStringSpace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSendMessage.resx">
       <DependentUpon>FormSendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThreadTest.resx">
+      <DependentUpon>FormThreadTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

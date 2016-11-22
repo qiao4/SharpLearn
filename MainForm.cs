@@ -31,6 +31,16 @@ namespace SharpLearn
 			FormSendMessage f = new FormSendMessage(p);
 			f.ShowDialog();
 		}
+		void ButtonRomoveClick(object sender, EventArgs e)
+		{
+			FormRemoveStringSpace form = new FormRemoveStringSpace(p);
+			form.ShowDialog();
+		}
+		void ButtonThreadTestClick(object sender, EventArgs e)
+		{
+			Form f = new FormThreadTest();
+			f.ShowDialog();
+		}
 		
 		
 	}
