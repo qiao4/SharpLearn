@@ -21,6 +21,7 @@ namespace SharpLearn
 	public sealed class Program
 	{
 		static Program p = new Program();
+		public static Utils.FormLog logger;
 		int port = 8091;
 		
 		/// <summary>
@@ -31,6 +32,7 @@ namespace SharpLearn
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			logger = new Utils.FormLog();
 			Application.Run(new MainForm(p));
 		}
 		
@@ -104,5 +106,9 @@ namespace SharpLearn
 			return str.Replace(" ", "");
 		}
 		
+		
+		public static void log(String logMessage) {
+			logger.appendLog(logMessage);
+		}
 	}
 }

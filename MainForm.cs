@@ -25,9 +25,11 @@ namespace SharpLearn
 			InitializeComponent();
 			
 			this.p = p;
+			Program.logger.Show();
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
+			Program.log("clicked button 1");
 			FormSendMessage f = new FormSendMessage(p);
 			f.ShowDialog();
 		}
