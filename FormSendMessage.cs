@@ -56,6 +56,7 @@ namespace SharpLearn
 		void FormSendMessageLoad(object sender, EventArgs e)
 		{
 			System.Threading.Thread newThread = new System.Threading.Thread(StartListen);
+			newThread.IsBackground = true;
 			newThread.Start();
 		}
 		
@@ -74,7 +75,9 @@ namespace SharpLearn
 					int length = data[0];
 					byte[] message = new byte[length];
 					Buffer.BlockCopy(data, 1, message, 0,message.Length);
-					SetMyTextBoxValue(UTF8Encoding.Default.GetString(message));
+					SetMyTextBoxValue(UTF8Encoding.Default.GetString(message)
+					                  + " --ip:" + ((IPEndPoint)point).Address.ToString()
+					                  + " in " + DateTime.Now.ToString());
 					
 				}
 			} catch (Exception e) {

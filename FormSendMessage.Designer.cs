@@ -45,12 +45,12 @@ namespace SharpLearn
 		{
 			this.components = new System.ComponentModel.Container();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.textboxMessage = new System.Windows.Forms.TextBox();
 			this.inputMessage = new System.Windows.Forms.TextBox();
 			this.buttonSend = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.inputIp = new System.Windows.Forms.TextBox();
 			this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.textboxMessage = new System.Windows.Forms.TextBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
 			this.SuspendLayout();
@@ -67,6 +67,14 @@ namespace SharpLearn
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(575, 316);
 			this.panel1.TabIndex = 0;
+			// 
+			// textboxMessage
+			// 
+			this.textboxMessage.Location = new System.Drawing.Point(30, 94);
+			this.textboxMessage.Multiline = true;
+			this.textboxMessage.Name = "textboxMessage";
+			this.textboxMessage.Size = new System.Drawing.Size(347, 180);
+			this.textboxMessage.TabIndex = 4;
 			// 
 			// inputMessage
 			// 
@@ -100,15 +108,7 @@ namespace SharpLearn
 			this.inputIp.Name = "inputIp";
 			this.inputIp.Size = new System.Drawing.Size(154, 21);
 			this.inputIp.TabIndex = 0;
-			this.inputIp.Text = "192.168.1.100";
-			// 
-			// textboxMessage
-			// 
-			this.textboxMessage.Location = new System.Drawing.Point(30, 94);
-			this.textboxMessage.Multiline = true;
-			this.textboxMessage.Name = "textboxMessage";
-			this.textboxMessage.Size = new System.Drawing.Size(347, 180);
-			this.textboxMessage.TabIndex = 4;
+			this.inputIp.Text = "192.168.1.2";
 			// 
 			// FormSendMessage
 			// 

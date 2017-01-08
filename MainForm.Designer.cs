@@ -17,6 +17,7 @@ namespace SharpLearn
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button buttonRomove;
 		private System.Windows.Forms.Button buttonThreadTest;
+		private System.Windows.Forms.Button buttonFormatStr;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -42,6 +43,7 @@ namespace SharpLearn
 			this.button1 = new System.Windows.Forms.Button();
 			this.buttonRomove = new System.Windows.Forms.Button();
 			this.buttonThreadTest = new System.Windows.Forms.Button();
+			this.buttonFormatStr = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -74,11 +76,22 @@ namespace SharpLearn
 			this.buttonThreadTest.UseVisualStyleBackColor = true;
 			this.buttonThreadTest.Click += new System.EventHandler(this.ButtonThreadTestClick);
 			// 
+			// buttonFormatStr
+			// 
+			this.buttonFormatStr.Location = new System.Drawing.Point(13, 139);
+			this.buttonFormatStr.Name = "buttonFormatStr";
+			this.buttonFormatStr.Size = new System.Drawing.Size(104, 23);
+			this.buttonFormatStr.TabIndex = 3;
+			this.buttonFormatStr.Text = "format string";
+			this.buttonFormatStr.UseVisualStyleBackColor = true;
+			this.buttonFormatStr.Click += new System.EventHandler(this.ButtonFormatStrClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(597, 358);
+			this.Controls.Add(this.buttonFormatStr);
 			this.Controls.Add(this.buttonThreadTest);
 			this.Controls.Add(this.buttonRomove);
 			this.Controls.Add(this.button1);

@@ -25,7 +25,14 @@ namespace SharpLearn
 			InitializeComponent();
 			
 			this.p = p;
+			this.StartPosition = FormStartPosition.Manual;
+			Program.log("location x is " + (this.Location.X + this.Size.Width + 5).ToString());
+			Program.logger.SetDesktopLocation(this.Location.X + this.Size.Width + 5, 0);
+			Program.logger.Location = new Point(this.Location.X + this.Size.Width + 25, 0);
+			Program.logger.StartPosition = FormStartPosition.Manual;
 			Program.logger.Show();
+			Program.log(Program.logger.Location.ToString());
+			
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
@@ -41,6 +48,21 @@ namespace SharpLearn
 		void ButtonThreadTestClick(object sender, EventArgs e)
 		{
 			Form f = new FormThreadTest();
+			f.ShowDialog();
+			
+			//code generate
+			try {
+				
+			} catch (Exception) {
+				
+				throw;
+			} finally {
+				
+			}
+		}
+		void ButtonFormatStrClick(object sender, EventArgs e)
+		{
+			Form f = new Forms.FormFormatString();
 			f.ShowDialog();
 		}
 		

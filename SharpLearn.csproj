@@ -58,6 +58,10 @@
     <Compile Include="FormSendMessage.Designer.cs">
       <DependentUpon>FormSendMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormFormatString.cs" />
+    <Compile Include="Forms\FormFormatString.Designer.cs">
+      <DependentUpon>FormFormatString.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThreadTest.cs" />
     <Compile Include="FormThreadTest.Designer.cs">
       <DependentUpon>FormThreadTest.cs</DependentUpon>
@@ -83,6 +87,9 @@
     <EmbeddedResource Include="FormSendMessage.resx">
       <DependentUpon>FormSendMessage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFormatString.resx">
+      <DependentUpon>FormFormatString.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThreadTest.resx">
       <DependentUpon>FormThreadTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils" />
+    <Folder Include="Forms" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -43,9 +43,11 @@ namespace SharpLearn.Utils
 			// inputLog
 			// 
 			this.inputLog.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.inputLog.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.inputLog.Location = new System.Drawing.Point(0, 0);
 			this.inputLog.Multiline = true;
 			this.inputLog.Name = "inputLog";
+			this.inputLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.inputLog.Size = new System.Drawing.Size(772, 418);
 			this.inputLog.TabIndex = 0;
 			// 
