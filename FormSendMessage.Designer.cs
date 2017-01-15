@@ -108,7 +108,7 @@ namespace SharpLearn
 			this.inputIp.Name = "inputIp";
 			this.inputIp.Size = new System.Drawing.Size(154, 21);
 			this.inputIp.TabIndex = 0;
-			this.inputIp.Text = "192.168.1.2";
+			this.inputIp.Text = "192.168.1.5";
 			// 
 			// FormSendMessage
 			// 

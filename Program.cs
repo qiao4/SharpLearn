@@ -36,6 +36,14 @@ namespace SharpLearn
 			Application.Run(new MainForm(p));
 		}
 		
+		public void ForOthers()
+		{
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			logger = new Utils.FormLog();
+			Application.Run(new MainForm(p));
+		}
+		
 		//send message by udp in lan
 		public bool SendMessage(String ip, String message) {
 			Socket s = null;
