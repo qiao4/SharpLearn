@@ -5,7 +5,7 @@
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>SharpLearn</RootNamespace>
     <AssemblyName>SharpLearn</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -63,6 +63,10 @@
     <Compile Include="Forms\FormFormatString.Designer.cs">
       <DependentUpon>FormFormatString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormOpenFileByPath.cs" />
+    <Compile Include="Forms\FormOpenFileByPath.Designer.cs">
+      <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThreadTest.cs" />
     <Compile Include="FormThreadTest.Designer.cs">
       <DependentUpon>FormThreadTest.cs</DependentUpon>
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormFormatString.resx">
       <DependentUpon>FormFormatString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormOpenFileByPath.resx">
+      <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThreadTest.resx">
       <DependentUpon>FormThreadTest.cs</DependentUpon>

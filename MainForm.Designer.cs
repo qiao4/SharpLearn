@@ -18,6 +18,7 @@ namespace SharpLearn
 		private System.Windows.Forms.Button buttonRomove;
 		private System.Windows.Forms.Button buttonThreadTest;
 		private System.Windows.Forms.Button buttonFormatStr;
+		private System.Windows.Forms.Button openFile;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -44,6 +45,7 @@ namespace SharpLearn
 			this.buttonRomove = new System.Windows.Forms.Button();
 			this.buttonThreadTest = new System.Windows.Forms.Button();
 			this.buttonFormatStr = new System.Windows.Forms.Button();
+			this.openFile = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -86,11 +88,22 @@ namespace SharpLearn
 			this.buttonFormatStr.UseVisualStyleBackColor = true;
 			this.buttonFormatStr.Click += new System.EventHandler(this.ButtonFormatStrClick);
 			// 
+			// openFile
+			// 
+			this.openFile.Location = new System.Drawing.Point(13, 190);
+			this.openFile.Name = "openFile";
+			this.openFile.Size = new System.Drawing.Size(103, 31);
+			this.openFile.TabIndex = 4;
+			this.openFile.Text = "open file";
+			this.openFile.UseVisualStyleBackColor = true;
+			this.openFile.Click += new System.EventHandler(this.OpenFileClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(597, 358);
+			this.Controls.Add(this.openFile);
 			this.Controls.Add(this.buttonFormatStr);
 			this.Controls.Add(this.buttonThreadTest);
 			this.Controls.Add(this.buttonRomove);

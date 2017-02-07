@@ -65,6 +65,10 @@ namespace SharpLearn
 			Form f = new Forms.FormFormatString();
 			f.ShowDialog();
 		}
+		void OpenFileClick(object sender, EventArgs e) {
+			Form f = new Forms.FormOpenFileByPath();
+			f.ShowDialog();
+		}
 		
 		
 	}

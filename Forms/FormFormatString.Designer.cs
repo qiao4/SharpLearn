@@ -19,6 +19,7 @@ namespace SharpLearn.Forms
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox inputFormatString;
 		private System.Windows.Forms.Button buttonFormat;
+		private System.Windows.Forms.Button stringFormat;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -46,6 +47,7 @@ namespace SharpLearn.Forms
 			this.label2 = new System.Windows.Forms.Label();
 			this.inputFormatString = new System.Windows.Forms.TextBox();
 			this.buttonFormat = new System.Windows.Forms.Button();
+			this.stringFormat = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// inputStr
@@ -88,11 +90,22 @@ namespace SharpLearn.Forms
 			this.buttonFormat.UseVisualStyleBackColor = true;
 			this.buttonFormat.Click += new System.EventHandler(this.ButtonFormatClick);
 			// 
+			// stringFormat
+			// 
+			this.stringFormat.Location = new System.Drawing.Point(231, 106);
+			this.stringFormat.Name = "stringFormat";
+			this.stringFormat.Size = new System.Drawing.Size(208, 23);
+			this.stringFormat.TabIndex = 5;
+			this.stringFormat.Text = "String.Format";
+			this.stringFormat.UseVisualStyleBackColor = true;
+			this.stringFormat.Click += new System.EventHandler(this.StringFormatClick);
+			// 
 			// FormFormatString
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(611, 337);
+			this.Controls.Add(this.stringFormat);
 			this.Controls.Add(this.buttonFormat);
 			this.Controls.Add(this.inputFormatString);
 			this.Controls.Add(this.label2);
