@@ -19,6 +19,7 @@ namespace SharpLearn
 		private System.Windows.Forms.Button buttonThreadTest;
 		private System.Windows.Forms.Button buttonFormatStr;
 		private System.Windows.Forms.Button openFile;
+		private System.Windows.Forms.Button tempTest;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -46,6 +47,7 @@ namespace SharpLearn
 			this.buttonThreadTest = new System.Windows.Forms.Button();
 			this.buttonFormatStr = new System.Windows.Forms.Button();
 			this.openFile = new System.Windows.Forms.Button();
+			this.tempTest = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -98,11 +100,22 @@ namespace SharpLearn
 			this.openFile.UseVisualStyleBackColor = true;
 			this.openFile.Click += new System.EventHandler(this.OpenFileClick);
 			// 
+			// tempTest
+			// 
+			this.tempTest.Location = new System.Drawing.Point(13, 228);
+			this.tempTest.Name = "tempTest";
+			this.tempTest.Size = new System.Drawing.Size(103, 30);
+			this.tempTest.TabIndex = 5;
+			this.tempTest.Text = "Temp Test";
+			this.tempTest.UseVisualStyleBackColor = true;
+			this.tempTest.Click += new System.EventHandler(this.TempTestClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(597, 358);
+			this.Controls.Add(this.tempTest);
 			this.Controls.Add(this.openFile);
 			this.Controls.Add(this.buttonFormatStr);
 			this.Controls.Add(this.buttonThreadTest);

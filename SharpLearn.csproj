@@ -67,6 +67,10 @@
     <Compile Include="Forms\FormOpenFileByPath.Designer.cs">
       <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTemp.cs" />
+    <Compile Include="FormTemp.Designer.cs">
+      <DependentUpon>FormTemp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThreadTest.cs" />
     <Compile Include="FormThreadTest.Designer.cs">
       <DependentUpon>FormThreadTest.cs</DependentUpon>
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormOpenFileByPath.resx">
       <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTemp.resx">
+      <DependentUpon>FormTemp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThreadTest.resx">
       <DependentUpon>FormThreadTest.cs</DependentUpon>

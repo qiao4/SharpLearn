@@ -69,6 +69,10 @@ namespace SharpLearn
 			Form f = new Forms.FormOpenFileByPath();
 			f.ShowDialog();
 		}
+		void TempTestClick(object sender, EventArgs e) {
+			Form f = new FormTemp();
+			f.Show();
+		}
 		
 		
 	}
