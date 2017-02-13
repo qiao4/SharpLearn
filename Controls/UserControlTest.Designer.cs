@@ -1,23 +1,22 @@
 ﻿/*
  * 由SharpDevelop创建。
  * 用户： qiao4
- * 日期: 2017/2/12
- * 时间: 21:53
+ * 日期: 2017/2/13
+ * 时间: 13:08
  * 
  * 要改变这种模板请点击 工具|选项|代码编写|编辑标准头文件
  */
-namespace SharpLearn
+namespace SharpLearn.Controls
 {
-	partial class FormTemp
+	partial class UserControlTest
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.Button lambdaTest;
 		
 		/// <summary>
-		/// Disposes resources used by the form.
+		/// Disposes resources used by the control.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
 		protected override void Dispose(bool disposing)
@@ -37,29 +36,14 @@ namespace SharpLearn
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.lambdaTest = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// lambdaTest
-			// 
-			this.lambdaTest.Location = new System.Drawing.Point(12, 26);
-			this.lambdaTest.Name = "lambdaTest";
-			this.lambdaTest.Size = new System.Drawing.Size(102, 23);
-			this.lambdaTest.TabIndex = 0;
-			this.lambdaTest.Text = "lambda test";
-			this.lambdaTest.UseVisualStyleBackColor = true;
-			this.lambdaTest.Click += new System.EventHandler(this.LambdaTestClick);
-			this.lambdaTest.MouseHover += new System.EventHandler(this.LambdaTestMouseHover);
-			// 
-			// FormTemp
+			// UserControlTest
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(526, 307);
-			this.Controls.Add(this.lambdaTest);
-			this.Name = "FormTemp";
-			this.Text = "FormTemp";
-			this.Load += new System.EventHandler(this.FormTempLoad);
+			this.Name = "UserControlTest";
+			this.Size = new System.Drawing.Size(167, 59);
 			this.ResumeLayout(false);
 
 		}

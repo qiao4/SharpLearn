@@ -18,6 +18,7 @@ namespace SharpLearn
 	public partial class FormTemp : Form
 	{
 		delegate String D(String t, int i);
+		ToolTip t = new ToolTip();
 		public FormTemp()
 		{
 			//
@@ -30,8 +31,9 @@ namespace SharpLearn
 			//
 		}
 		void LambdaTestMouseHover(object sender, EventArgs e) {
-			ToolTip t = new ToolTip();
-			t.Show("repeat String some times", lambdaTest);
+//			ToolTip t = new ToolTip();
+////			t.Show("repeat String some times", lambdaTest);
+//			t.SetToolTip(lambdaTest, "repeat String some times");
 		}
 		void LambdaTestClick(object sender, EventArgs e) {
 			String test = "abc";
@@ -46,6 +48,9 @@ namespace SharpLearn
 				return t;
 			};
 			Program.log(d(test, num));
+		}
+		void FormTempLoad(object sender, EventArgs e) {
+			t.SetToolTip(lambdaTest, "repeat String some times");
 		}
 		
 	}

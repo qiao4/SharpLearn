@@ -51,6 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\UserControlTest.cs" />
+    <Compile Include="Controls\UserControlTest.Designer.cs">
+      <DependentUpon>UserControlTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRemoveStringSpace.cs" />
     <Compile Include="FormRemoveStringSpace.Designer.cs">
       <DependentUpon>FormRemoveStringSpace.cs</DependentUpon>
@@ -66,6 +70,10 @@
     <Compile Include="Forms\FormOpenFileByPath.cs" />
     <Compile Include="Forms\FormOpenFileByPath.Designer.cs">
       <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormUserControlTest.cs" />
+    <Compile Include="Forms\FormUserControlTest.Designer.cs">
+      <DependentUpon>FormUserControlTest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTemp.cs" />
     <Compile Include="FormTemp.Designer.cs">
@@ -90,6 +98,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\UserControlTest.resx">
+      <DependentUpon>UserControlTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRemoveStringSpace.resx">
       <DependentUpon>FormRemoveStringSpace.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormOpenFileByPath.resx">
       <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormUserControlTest.resx">
+      <DependentUpon>FormUserControlTest.Designer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTemp.resx">
       <DependentUpon>FormTemp.cs</DependentUpon>
@@ -118,6 +132,7 @@
   <ItemGroup>
     <Folder Include="Utils" />
     <Folder Include="Forms" />
+    <Folder Include="Controls" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
