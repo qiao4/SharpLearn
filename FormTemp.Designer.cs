@@ -15,6 +15,7 @@ namespace SharpLearn
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.Button lambdaTest;
+		private System.Windows.Forms.Button controlCollectionTest;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -38,6 +39,7 @@ namespace SharpLearn
 		private void InitializeComponent()
 		{
 			this.lambdaTest = new System.Windows.Forms.Button();
+			this.controlCollectionTest = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lambdaTest
@@ -51,11 +53,22 @@ namespace SharpLearn
 			this.lambdaTest.Click += new System.EventHandler(this.LambdaTestClick);
 			this.lambdaTest.MouseHover += new System.EventHandler(this.LambdaTestMouseHover);
 			// 
+			// controlCollectionTest
+			// 
+			this.controlCollectionTest.Location = new System.Drawing.Point(12, 67);
+			this.controlCollectionTest.Name = "controlCollectionTest";
+			this.controlCollectionTest.Size = new System.Drawing.Size(118, 38);
+			this.controlCollectionTest.TabIndex = 1;
+			this.controlCollectionTest.Text = "ControlCollection Test";
+			this.controlCollectionTest.UseVisualStyleBackColor = true;
+			this.controlCollectionTest.Click += new System.EventHandler(this.ControlCollectionTestClick);
+			// 
 			// FormTemp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(526, 307);
+			this.Controls.Add(this.controlCollectionTest);
 			this.Controls.Add(this.lambdaTest);
 			this.Name = "FormTemp";
 			this.Text = "FormTemp";
