@@ -113,10 +113,10 @@ namespace SharpLearn
 		public String Remove(String str) {
 			return str.Replace(" ", "");
 		}
-		
-		
+        
 		public static void log(String logMessage) {
 			logger.appendLog(logMessage);
+
 		}
 	}
 }
