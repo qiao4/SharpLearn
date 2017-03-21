@@ -38,43 +38,73 @@ namespace SharpLearn
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.lambdaTest = new System.Windows.Forms.Button();
-			this.controlCollectionTest = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// lambdaTest
-			// 
-			this.lambdaTest.Location = new System.Drawing.Point(12, 26);
-			this.lambdaTest.Name = "lambdaTest";
-			this.lambdaTest.Size = new System.Drawing.Size(102, 23);
-			this.lambdaTest.TabIndex = 0;
-			this.lambdaTest.Text = "lambda test";
-			this.lambdaTest.UseVisualStyleBackColor = true;
-			this.lambdaTest.Click += new System.EventHandler(this.LambdaTestClick);
-			this.lambdaTest.MouseHover += new System.EventHandler(this.LambdaTestMouseHover);
-			// 
-			// controlCollectionTest
-			// 
-			this.controlCollectionTest.Location = new System.Drawing.Point(12, 67);
-			this.controlCollectionTest.Name = "controlCollectionTest";
-			this.controlCollectionTest.Size = new System.Drawing.Size(118, 38);
-			this.controlCollectionTest.TabIndex = 1;
-			this.controlCollectionTest.Text = "ControlCollection Test";
-			this.controlCollectionTest.UseVisualStyleBackColor = true;
-			this.controlCollectionTest.Click += new System.EventHandler(this.ControlCollectionTestClick);
-			// 
-			// FormTemp
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(526, 307);
-			this.Controls.Add(this.controlCollectionTest);
-			this.Controls.Add(this.lambdaTest);
-			this.Name = "FormTemp";
-			this.Text = "FormTemp";
-			this.Load += new System.EventHandler(this.FormTempLoad);
-			this.ResumeLayout(false);
+            this.lambdaTest = new System.Windows.Forms.Button();
+            this.controlCollectionTest = new System.Windows.Forms.Button();
+            this.linqTest = new System.Windows.Forms.Button();
+            this.dataColumnTest = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lambdaTest
+            // 
+            this.lambdaTest.Location = new System.Drawing.Point(16, 32);
+            this.lambdaTest.Margin = new System.Windows.Forms.Padding(4);
+            this.lambdaTest.Name = "lambdaTest";
+            this.lambdaTest.Size = new System.Drawing.Size(136, 29);
+            this.lambdaTest.TabIndex = 0;
+            this.lambdaTest.Text = "lambda test";
+            this.lambdaTest.UseVisualStyleBackColor = true;
+            this.lambdaTest.Click += new System.EventHandler(this.LambdaTestClick);
+            this.lambdaTest.MouseHover += new System.EventHandler(this.LambdaTestMouseHover);
+            // 
+            // controlCollectionTest
+            // 
+            this.controlCollectionTest.Location = new System.Drawing.Point(16, 84);
+            this.controlCollectionTest.Margin = new System.Windows.Forms.Padding(4);
+            this.controlCollectionTest.Name = "controlCollectionTest";
+            this.controlCollectionTest.Size = new System.Drawing.Size(157, 48);
+            this.controlCollectionTest.TabIndex = 1;
+            this.controlCollectionTest.Text = "ControlCollection Test";
+            this.controlCollectionTest.UseVisualStyleBackColor = true;
+            this.controlCollectionTest.Click += new System.EventHandler(this.ControlCollectionTestClick);
+            // 
+            // linqTest
+            // 
+            this.linqTest.Location = new System.Drawing.Point(16, 166);
+            this.linqTest.Name = "linqTest";
+            this.linqTest.Size = new System.Drawing.Size(157, 39);
+            this.linqTest.TabIndex = 2;
+            this.linqTest.Text = "Linq Test";
+            this.linqTest.UseVisualStyleBackColor = true;
+            this.linqTest.Click += new System.EventHandler(this.linqTest_Click);
+            // 
+            // dataColumnTest
+            // 
+            this.dataColumnTest.Location = new System.Drawing.Point(16, 226);
+            this.dataColumnTest.Name = "dataColumnTest";
+            this.dataColumnTest.Size = new System.Drawing.Size(157, 36);
+            this.dataColumnTest.TabIndex = 3;
+            this.dataColumnTest.Text = "DataColumn Test";
+            this.dataColumnTest.UseVisualStyleBackColor = true;
+            this.dataColumnTest.Click += new System.EventHandler(this.dataColumnTest_Click);
+            // 
+            // FormTemp
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(701, 384);
+            this.Controls.Add(this.dataColumnTest);
+            this.Controls.Add(this.linqTest);
+            this.Controls.Add(this.controlCollectionTest);
+            this.Controls.Add(this.lambdaTest);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FormTemp";
+            this.Text = "FormTemp";
+            this.Load += new System.EventHandler(this.FormTempLoad);
+            this.ResumeLayout(false);
 
 		}
-	}
+
+        private System.Windows.Forms.Button linqTest;
+        private System.Windows.Forms.Button dataColumnTest;
+    }
 }

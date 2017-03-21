@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <ProjectGuid>{77FBDE6E-E49F-486E-8663-0746A0611B9A}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SharpLearn</RootNamespace>
     <AssemblyName>SharpLearn</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <NoWin32Manifest>False</NoWin32Manifest>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -30,6 +31,12 @@
     <Optimize>True</Optimize>
     <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
     <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp">
@@ -51,45 +58,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\UserControlTest.cs" />
+    <Compile Include="Controls\UserControlTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Controls\UserControlTest.Designer.cs">
       <DependentUpon>UserControlTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRemoveStringSpace.cs" />
+    <Compile Include="FormRemoveStringSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormRemoveStringSpace.Designer.cs">
       <DependentUpon>FormRemoveStringSpace.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSendMessage.cs" />
+    <Compile Include="FormSendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormSendMessage.Designer.cs">
       <DependentUpon>FormSendMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormFormatString.cs" />
+    <Compile Include="Forms\FormFormatString.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormFormatString.Designer.cs">
       <DependentUpon>FormFormatString.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormOpenFileByPath.cs" />
+    <Compile Include="Forms\FormOpenFileByPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormOpenFileByPath.Designer.cs">
       <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormUserControlTest.cs" />
+    <Compile Include="Forms\FormUserControlTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormUserControlTest.Designer.cs">
       <DependentUpon>FormUserControlTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTemp.cs" />
+    <Compile Include="FormTemp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormTemp.Designer.cs">
       <DependentUpon>FormTemp.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormThreadTest.cs" />
+    <Compile Include="FormThreadTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormThreadTest.Designer.cs">
       <DependentUpon>FormThreadTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\FormLog.cs" />
+    <Compile Include="Utils\FormLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utils\FormLog.Designer.cs">
       <DependentUpon>FormLog.cs</DependentUpon>
     </Compile>
@@ -129,10 +156,6 @@
       <DependentUpon>FormLog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils" />
-    <Folder Include="Forms" />
-    <Folder Include="Controls" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,6 +12,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Linq;
+using System.Data;
 
 namespace SharpLearn
 {
@@ -113,6 +115,30 @@ namespace SharpLearn
 		public String Remove(String str) {
 			return str.Replace(" ", "");
 		}
+
+        public static void LinqTest() {
+            int[] array = { 1, 5, 2, 10, 7 };
+            // Select squares of all odd numbers in the array sorted in descending order
+            var results = from x in array
+                          where x % 2 == 1
+                          orderby x descending
+                          select x * x;
+            foreach (var result in results) {
+                log(result.ToString());
+            }
+        }
+
+        public static void DataColumnTest() {
+            DataTable tb = new DataTable();
+            tb.Columns.Add(new DataColumn("name", Type.GetType("System.String")));
+            tb.Columns.Add(new DataColumn("id", Type.GetType("System.Double")));
+
+            foreach(DataColumn d in tb.Columns) {
+                log((d.DataType is System.Double).ToString());
+                log(d.DataType.ToString());
+                log((d.DataType.ToString() == "System.Double").ToString());
+            }
+        }
         
 		public static void log(String logMessage) {
 			logger.appendLog(logMessage);

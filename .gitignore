@@ -31,3 +31,6 @@
 # Debug files and Output files
 obj/
 bin/
+
+# visual studio files
+.vs/
