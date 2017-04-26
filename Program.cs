@@ -139,6 +139,34 @@ namespace SharpLearn
                 log((d.DataType.ToString() == "System.Double").ToString());
             }
         }
+
+        public static void  ShowTable(DataTable tb) {
+            System.IO.StreamWriter sw = new System.IO.StreamWriter("data.txt");
+            foreach(DataColumn col in tb.Columns) {
+                sw.Write("{0,-20}", col.ColumnName);
+            }
+            sw.WriteLine();
+            foreach(DataRow dr in tb.Rows) {
+                foreach(object o in dr.ItemArray) {
+                    sw.Write("{0,-20}", o.ToString());
+                }
+                sw.WriteLine();
+            }
+            sw.Close();
+        }
+
+        public static int GetWeekdayNum(DateTime dt) {
+            dt = new DateTime(dt.Year, dt.Month, 1);
+            var monthDays = dt.Subtract(dt.AddMonths(1));
+            int num = 0;
+            for(int i = 1; i <= Math.Abs(monthDays.TotalDays) - 28; i++) {
+                var dtTemp = new DateTime(dt.Year, dt.Month, 28 + i);
+                if(dtTemp.DayOfWeek != DayOfWeek.Saturday && dtTemp.DayOfWeek != DayOfWeek.Sunday) {
+                    num++;
+                }
+            }
+            return 20 + num;
+        }
         
 		public static void log(String logMessage) {
 			logger.appendLog(logMessage);

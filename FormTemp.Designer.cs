@@ -42,6 +42,9 @@ namespace SharpLearn
             this.controlCollectionTest = new System.Windows.Forms.Button();
             this.linqTest = new System.Windows.Forms.Button();
             this.dataColumnTest = new System.Windows.Forms.Button();
+            this.stringEx = new System.Windows.Forms.Button();
+            this.showTable = new System.Windows.Forms.Button();
+            this.showMonthDays = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lambdaTest
@@ -87,11 +90,44 @@ namespace SharpLearn
             this.dataColumnTest.UseVisualStyleBackColor = true;
             this.dataColumnTest.Click += new System.EventHandler(this.dataColumnTest_Click);
             // 
+            // stringEx
+            // 
+            this.stringEx.Location = new System.Drawing.Point(13, 284);
+            this.stringEx.Name = "stringEx";
+            this.stringEx.Size = new System.Drawing.Size(160, 33);
+            this.stringEx.TabIndex = 4;
+            this.stringEx.Text = "String Extension";
+            this.stringEx.UseVisualStyleBackColor = true;
+            this.stringEx.Click += new System.EventHandler(this.stringEx_Click);
+            // 
+            // showTable
+            // 
+            this.showTable.Location = new System.Drawing.Point(276, 32);
+            this.showTable.Name = "showTable";
+            this.showTable.Size = new System.Drawing.Size(113, 23);
+            this.showTable.TabIndex = 5;
+            this.showTable.Text = "show table";
+            this.showTable.UseVisualStyleBackColor = true;
+            this.showTable.Click += new System.EventHandler(this.showTable_Click);
+            // 
+            // showMonthDays
+            // 
+            this.showMonthDays.Location = new System.Drawing.Point(276, 84);
+            this.showMonthDays.Name = "showMonthDays";
+            this.showMonthDays.Size = new System.Drawing.Size(113, 33);
+            this.showMonthDays.TabIndex = 6;
+            this.showMonthDays.Text = "month days";
+            this.showMonthDays.UseVisualStyleBackColor = true;
+            this.showMonthDays.Click += new System.EventHandler(this.showMonthDays_Click);
+            // 
             // FormTemp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 384);
+            this.ClientSize = new System.Drawing.Size(702, 384);
+            this.Controls.Add(this.showMonthDays);
+            this.Controls.Add(this.showTable);
+            this.Controls.Add(this.stringEx);
             this.Controls.Add(this.dataColumnTest);
             this.Controls.Add(this.linqTest);
             this.Controls.Add(this.controlCollectionTest);
@@ -100,11 +136,15 @@ namespace SharpLearn
             this.Name = "FormTemp";
             this.Text = "FormTemp";
             this.Load += new System.EventHandler(this.FormTempLoad);
+            this.Resize += new System.EventHandler(this.FormTemp_Resize);
             this.ResumeLayout(false);
 
 		}
 
         private System.Windows.Forms.Button linqTest;
         private System.Windows.Forms.Button dataColumnTest;
+        private System.Windows.Forms.Button stringEx;
+        private System.Windows.Forms.Button showTable;
+        private System.Windows.Forms.Button showMonthDays;
     }
 }

@@ -9,6 +9,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using SharpLearn.Utils;
+using System.Data;
 
 namespace SharpLearn {
     /// <summary>
@@ -88,6 +90,55 @@ namespace SharpLearn {
 
         private void dataColumnTest_Click(object sender, EventArgs e) {
             Program.DataColumnTest();
+            //MessageBox.Show(System.Windows.Forms.Screen
+            //    .FromControl(this).Bounds.Width.ToString());
+            //MessageBox.Show(this.Bounds.Width.ToString());
+            //MessageBox.Show(new DateTime().Subtract(
+            //    new DateTime().AddDays(1)).TotalMinutes.ToString());
+            Program.log("this.Font is " + this.Font.ToString()
+                + "\r\n 勉強's width is "
+                + System.Windows.Forms.TextRenderer.MeasureText("勉強", this.Font).Width.ToString());
+            this.Font = new System.Drawing.Font(
+                "Noto Sans CJK JP Bold", 9F
+                , System.Drawing.FontStyle.Bold
+                , System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            Program.log("this.Font is " + this.Font.ToString()
+                + "\r\n 勉強's width is "
+                + System.Windows.Forms.TextRenderer.MeasureText("勉強", this.Font).Width.ToString());
+        }
+
+        private void FormTemp_Resize(object sender, EventArgs e) {
+            Program.log("Width of form is " + this.Width.ToString());
+            //this.Bounds.Width
+            //
+            //System.Windows.Forms.Screen.FromControl(this).Bounds.Width
+        }
+
+        private void stringEx_Click(object sender, EventArgs e) {
+            String str = "tom' or (1=1) --";
+            Program.log(String.Format("select 1 from user where user = {0} and psd = {1}", str, ""));
+            Program.log(String.Format("select 1 from user where user = {0} and psd = {1}", str.Quote(), ""));
+        }
+
+        private void showTable_Click(object sender, EventArgs e) {
+            DataTable tb = new DataTable();
+            tb.Columns.Add(new DataColumn("name", Type.GetType("System.String")));
+            tb.Columns.Add(new DataColumn("id", Type.GetType("System.Double")));
+
+            DataRow dr = tb.NewRow();
+            dr[0] = "tom";
+            dr[1] = 0;
+            tb.Rows.Add(dr);
+            tb.AcceptChanges();
+            Program.ShowTable(tb);
+
+        }
+
+        private void showMonthDays_Click(object sender, EventArgs e) {
+            int i = (new Random().Next() % 12) + 1;
+            DateTime dt = new DateTime(DateTime.Now.Year, i, 1);
+            MessageBox.Show(dt.ToString("yyyy-MM : ") 
+                + Program.GetWeekdayNum(dt) + " days");
         }
     }
 }
