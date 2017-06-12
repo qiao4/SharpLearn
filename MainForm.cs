@@ -73,7 +73,10 @@ namespace SharpLearn
 			Form f = new FormTemp();
 			f.Show();
 		}
-		
-		
-	}
+
+        private void geneQRCode_Click(object sender, EventArgs e) {
+            var form = new Forms.FormQRCode();
+            form.ShowDialog();
+        }
+    }
 }

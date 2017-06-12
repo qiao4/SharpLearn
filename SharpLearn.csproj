@@ -73,6 +73,9 @@
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="zxing, Version=1.0.4727.18517, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.2.1.1\lib\net20\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\UserControlTest.cs">
@@ -104,6 +107,12 @@
     </Compile>
     <Compile Include="Forms\FormOpenFileByPath.Designer.cs">
       <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormQRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormQRCode.Designer.cs">
+      <DependentUpon>FormQRCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormUserControlTest.cs">
       <SubType>Form</SubType>
@@ -141,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\UserControlTest.resx">
@@ -157,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormOpenFileByPath.resx">
       <DependentUpon>FormOpenFileByPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormQRCode.resx">
+      <DependentUpon>FormQRCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUserControlTest.resx">
       <DependentUpon>FormUserControlTest.Designer.cs</DependentUpon>
